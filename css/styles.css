@@ -678,12 +678,24 @@ textarea {
 
 .footer__socials {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
 .footer__socials a {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-text);
+  color: var(--color-bg);
   transition: opacity var(--transition);
+}
+
+.footer__socials .icon {
+  width: 14px;
+  height: 14px;
 }
 
 .footer__socials a:hover,

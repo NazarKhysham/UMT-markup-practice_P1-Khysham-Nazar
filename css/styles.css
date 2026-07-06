@@ -268,8 +268,8 @@ textarea {
 .mobile-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 32px var(--page-padding);
+  gap: 32px;
+  padding: 32px var(--page-padding) 0;
 }
 
 .mobile-menu__link {
@@ -278,7 +278,7 @@ textarea {
 }
 
 .mobile-menu__cta {
-  margin: auto var(--page-padding) 32px;
+  margin: 24px var(--page-padding) 32px;
 }
 
 @media (min-width: 768px) {

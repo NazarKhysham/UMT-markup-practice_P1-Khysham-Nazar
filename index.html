@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flora — Fresh Flower Bouquets &amp; Floral Arrangements</title>
+    <meta
+      name="description"
+      content="Flora — expertly crafted flower bouquets for every occasion. Browse our bestsellers, explore the full collection and order online."
+    />
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/modern-normalize.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav container">
+        <a class="nav__logo" href="#top" aria-label="Flora home">
+          <img src="images/logo.svg" alt="Flora" width="112" height="48" />
+        </a>
+
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#about">About Us</a></li>
+          <li><a class="nav__link" href="#top-selling">Bestsellers</a></li>
+          <li><a class="nav__link" href="#bouquets">Bouquets</a></li>
+          <li><a class="nav__link" href="#testimonials">Feedback</a></li>
+          <li><a class="nav__link" href="#contacts">Contacts</a></li>
+        </ul>
+
+        <button
+          class="nav__toggle"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="icon" width="24" height="24">
+            <use href="images/icons.svg#icon-burger"></use>
+          </svg>
+        </button>
+      </nav>
+
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu__top container">
+          <a class="nav__logo" href="#top" aria-label="Flora home">
+            <img src="images/logo.svg" alt="Flora" width="112" height="48" />
+          </a>
+          <button class="mobile-menu__close" type="button" aria-label="Close menu">
+            <svg class="icon" width="24" height="24">
+              <use href="images/icons.svg#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+        <ul class="mobile-menu__list">
+          <li><a class="mobile-menu__link" href="#about">About Us</a></li>
+          <li><a class="mobile-menu__link" href="#top-selling">Bestsellers</a></li>
+          <li><a class="mobile-menu__link" href="#bouquets">Bouquets</a></li>
+          <li><a class="mobile-menu__link" href="#testimonials">Feedback</a></li>
+          <li><a class="mobile-menu__link" href="#contacts">Contacts</a></li>
+        </ul>
+        <a class="btn btn--primary mobile-menu__cta" href="#bouquets">Explore Bouquets</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <picture>
+          <source
+            srcset="images/hero-bouquet.png 1x, images/hero-bouquet@2x.png 2x"
+            media="(min-width: 768px)"
+          />
+          <img
+            class="hero__bg"
+            src="images/hero-bouquet.png"
+            srcset="images/hero-bouquet.png 1x, images/hero-bouquet@2x.png 2x"
+            alt=""
+            width="1440"
+            height="669"
+          />
+        </picture>
+        <div class="container hero__container">
+          <div class="hero__content" data-aos="fade-up">
+            <h1 class="hero__title">Brighten Your Day with Our Stunning Bouquets</h1>
+            <p class="hero__text">
+              At Flora, we believe that every occasion deserves a beautiful bouquet. Our expertly
+              crafted arrangements are designed to bring joy and elegance to your celebrations.
+            </p>
+            <a class="btn btn--primary" href="#top-selling">Explore Our Bestsellers</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="passion container" id="about">
+        <div class="passion__content" data-aos="fade-right">
+          <svg class="icon passion__icon" width="40" height="36" aria-hidden="true">
+            <use href="images/icons.svg#icon-flower"></use>
+          </svg>
+          <h2 class="section-title">Our Passion for Floral Artistry</h2>
+          <p class="passion__text">
+            At Flora, we believe that every occasion deserves a beautiful bouquet. Our expertly
+            crafted arrangements are designed to bring joy and elegance to your celebrations. Our
+            skilled florists handpick the freshest blooms and carefully design each arrangement,
+            blending creativity with the freshest blooms to create stunning pieces for every
+            occasion.
+          </p>
+        </div>
+        <img
+          class="passion__image"
+          data-aos="fade-left"
+          src="images/passion-florist.png"
+          srcset="images/passion-florist.png 1x, images/passion-florist@2x.png 2x"
+          alt="Florist arranging a bouquet of white peony flowers"
+          width="600"
+          height="428"
+          loading="lazy"
+        />
+      </section>
+
+      <section class="products container" id="top-selling">
+        <h2 class="section-title">Top-Selling Bouquets</h2>
+        <ul class="products__grid" id="top-selling-list"></ul>
+      </section>
+
+      <section class="products products--bouquets container" id="bouquets">
+        <h2 class="section-title">Bouquets</h2>
+        <p class="products__subtitle">Explore our stunning selection of fresh flower bouquets.</p>
+
+        <form class="bouquets__filter" id="bouquets-filter">
+          <label class="visually-hidden" for="bouquets-search">Search bouquets</label>
+          <input
+            class="bouquets__search"
+            type="search"
+            id="bouquets-search"
+            name="search"
+            placeholder="Search bouquets…"
+          />
+        </form>
+
+        <ul class="products__grid" id="bouquets-list" aria-live="polite"></ul>
+        <p class="products__empty" id="bouquets-empty" hidden>No bouquets found for your search.</p>
+
+        <button class="btn btn--primary products__show-more" id="show-more-btn" type="button">
+          Show More
+        </button>
+      </section>
+
+      <section class="testimonials container" id="testimonials">
+        <h2 class="section-title">What our clients says</h2>
+        <ul class="testimonials__list">
+          <li class="testimonial-card">
+            <p class="testimonial-card__text">
+              "Flora made my anniversary unforgettable with their beautiful arrangement!"
+            </p>
+            <p class="testimonial-card__author">Emma T.</p>
+          </li>
+          <li class="testimonial-card">
+            <p class="testimonial-card__text">
+              Absolutely stunning bouquet! It looked even better than the photo and arrived right on
+              time.
+            </p>
+            <p class="testimonial-card__author">Daniel R.</p>
+          </li>
+          <li class="testimonial-card">
+            <p class="testimonial-card__text">
+              The service was exceptional, and the flowers were fresh!
+            </p>
+            <p class="testimonial-card__author">Olivia M.</p>
+          </li>
+        </ul>
+        <div class="testimonials__nav">
+          <button class="testimonials__arrow" type="button" aria-label="Previous testimonials">
+            <svg class="icon" width="20" height="20">
+              <use href="images/icons.svg#icon-chevron-left"></use>
+            </svg>
+          </button>
+          <button class="testimonials__arrow" type="button" aria-label="Next testimonials">
+            <svg class="icon" width="20" height="20">
+              <use href="images/icons.svg#icon-chevron-right"></use>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="contact container" id="contacts">
+        <div class="contact__info">
+          <p class="contact__eyebrow">Connect</p>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="contact__text">
+            We're here to assist you with all your floral needs and inquiries.
+          </p>
+
+          <ul class="contact__list">
+            <li class="contact__item">
+              <svg class="icon" width="24" height="24">
+                <use href="images/icons.svg#icon-phone"></use>
+              </svg>
+              <div>
+                <p class="contact__label">Phone</p>
+                <a class="contact__value" href="tel:+15551234567">+1 (555) 123-4567</a>
+              </div>
+            </li>
+            <li class="contact__item">
+              <svg class="icon" width="24" height="24">
+                <use href="images/icons.svg#icon-pin"></use>
+              </svg>
+              <div>
+                <p class="contact__label">Store</p>
+                <p class="contact__value">456 Floral Ave, Sydney NSW 2000 AU</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <img
+          class="contact__image"
+          src="images/contact-florist.png"
+          srcset="images/contact-florist.png 1x, images/contact-florist@2x.png 2x"
+          alt="Florist wrapping a fresh bouquet at the counter"
+          width="1280"
+          height="720"
+          loading="lazy"
+        />
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__top">
+        <a class="nav__logo" href="#top" aria-label="Flora home">
+          <img src="images/logo.svg" alt="Flora" width="112" height="48" />
+        </a>
+        <ul class="footer__list">
+          <li><a class="nav__link" href="#about">About Us</a></li>
+          <li><a class="nav__link" href="#top-selling">Bestsellers</a></li>
+          <li><a class="nav__link" href="#bouquets">Bouquets</a></li>
+          <li><a class="nav__link" href="#testimonials">Feedback</a></li>
+          <li><a class="nav__link" href="#contacts">Contacts</a></li>
+        </ul>
+        <ul class="footer__socials">
+          <li>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Flora on Facebook"
+            >
+              <svg class="icon" width="24" height="24">
+                <use href="images/icons.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Flora on Instagram"
+            >
+              <svg class="icon" width="24" height="24">
+                <use href="images/icons.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Flora on X"
+            >
+              <svg class="icon" width="24" height="24">
+                <use href="images/icons.svg#icon-x"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p class="footer__copyright container">© 2025 Flora. All rights reserved.</p>
+    </footer>
+
+    <div class="modal-backdrop" id="product-modal">
+      <div
+        class="modal product-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="product-modal-title"
+      >
+        <button class="modal__close" type="button" aria-label="Close">
+          <svg class="icon" width="20" height="20">
+            <use href="images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <img
+          class="product-modal__image"
+          id="product-modal-image"
+          src=""
+          alt=""
+          width="536"
+          height="571"
+        />
+        <div class="product-modal__content">
+          <h3 class="product-modal__title" id="product-modal-title"></h3>
+          <p class="product-modal__price" id="product-modal-price"></p>
+          <p class="product-modal__description" id="product-modal-description"></p>
+          <button class="btn btn--primary product-modal__buy" id="product-modal-buy" type="button">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="order-modal">
+      <div
+        class="modal order-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="order-modal-title"
+      >
+        <button class="modal__close" type="button" aria-label="Close">
+          <svg class="icon" width="20" height="20">
+            <use href="images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <h3 class="order-modal__title" id="order-modal-title">Order</h3>
+        <form class="order-form" id="order-form" novalidate>
+          <input type="hidden" name="productId" id="order-product-id" />
+
+          <label class="order-form__field">
+            <span class="order-form__label">Name*</span>
+            <input class="order-form__input" type="text" name="name" placeholder="Ann" required />
+            <span class="order-form__error">Please enter your name.</span>
+          </label>
+
+          <label class="order-form__field">
+            <span class="order-form__label">Phone*</span>
+            <input
+              class="order-form__input"
+              type="tel"
+              name="phone"
+              placeholder="+1 (555) 123-4567"
+              pattern="^\+?[0-9\s()-]{7,}$"
+              required
+            />
+            <span class="order-form__error">Please enter a valid phone number.</span>
+          </label>
+
+          <label class="order-form__field">
+            <span class="order-form__label">Address*</span>
+            <input
+              class="order-form__input"
+              type="text"
+              name="address"
+              placeholder="456 Floral Ave, Sydney NSW 2000 AU"
+              required
+            />
+            <span class="order-form__error">Please enter a delivery address.</span>
+          </label>
+
+          <label class="order-form__field">
+            <span class="order-form__label">Message</span>
+            <textarea
+              class="order-form__input order-form__textarea"
+              name="message"
+              placeholder="Type your message…"
+            ></textarea>
+          </label>
+
+          <label class="checkbox">
+            <input
+              class="checkbox__input visually-hidden"
+              type="checkbox"
+              name="agreement"
+              required
+            />
+            <span class="checkbox__box">
+              <svg class="icon checkbox__icon" width="12" height="10">
+                <use href="images/icons.svg#icon-check"></use>
+              </svg>
+            </span>
+            <span class="checkbox__text"
+              >I agree to the license agreement and terms of service.</span
+            >
+          </label>
+
+          <button class="btn btn--primary order-form__submit" type="submit">Go to Checkout</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

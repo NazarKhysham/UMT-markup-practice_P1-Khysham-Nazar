@@ -1,0 +1,103 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "top-selling",
+      "name": "Spring Elegance",
+      "price": 35,
+      "image": "images/bouquet-spring-elegance.png",
+      "image2x": "images/bouquet-spring-elegance@2x.png",
+      "description": "A graceful spring bouquet of soft pink roses and tulips, wrapped for a joyful, elegant gift."
+    },
+    {
+      "id": 2,
+      "category": "top-selling",
+      "name": "Berry Chic",
+      "price": 40,
+      "image": "images/bouquet-rosy-glow.png",
+      "image2x": "images/bouquet-rosy-glow@2x.png",
+      "description": "A bold arrangement of deep berry roses and eucalyptus, finished with a satin ribbon."
+    },
+    {
+      "id": 3,
+      "category": "top-selling",
+      "name": "Lavender Dream",
+      "price": 55,
+      "image": "images/bouquet-lavender-dream.png",
+      "image2x": "images/bouquet-lavender-dream@2x.png",
+      "description": "Delicate lavender and violet blooms gathered in a rustic glass vase for a dreamy centerpiece."
+    },
+    {
+      "id": 4,
+      "category": "bouquet",
+      "name": "Peach Meadow",
+      "price": 55,
+      "image": "images/bouquet-pastel-meadow.png",
+      "image2x": "images/bouquet-pastel-meadow@2x.png",
+      "description": "Peach and blush blooms with wild meadow greens, wrapped in a soft woven basket."
+    },
+    {
+      "id": 5,
+      "category": "bouquet",
+      "name": "Blush Romance",
+      "price": 34,
+      "image": "images/bouquet-white-serenity.png",
+      "image2x": "images/bouquet-white-serenity@2x.png",
+      "description": "A romantic mix of blush roses and eucalyptus, hand-tied by our in-house florist."
+    },
+    {
+      "id": 6,
+      "category": "bouquet",
+      "name": "Pastel Garden",
+      "price": 40,
+      "image": "images/bouquet-forest-basket.png",
+      "image2x": "images/bouquet-forest-basket@2x.png",
+      "description": "Pastel garden roses and succulents styled in a rustic basket with pinecone accents."
+    },
+    {
+      "id": 7,
+      "category": "bouquet",
+      "name": "Tulip Charm",
+      "price": 61,
+      "image": "images/bouquet-sunny-morning.png",
+      "image2x": "images/bouquet-sunny-morning@2x.png",
+      "description": "Charming tulips and garden roses presented in a rustic wooden crate."
+    },
+    {
+      "id": 8,
+      "category": "bouquet",
+      "name": "Berry Bloom",
+      "price": 32,
+      "image": "images/bouquet-tropical-bloom.png",
+      "image2x": "images/bouquet-tropical-bloom@2x.png",
+      "description": "Rich berry-toned blooms and dried accents for a warm, textured arrangement."
+    },
+    {
+      "id": 9,
+      "category": "bouquet",
+      "name": "Sweet Whisper",
+      "price": 40,
+      "image": "images/bouquet-notecard-basket.png",
+      "image2x": "images/bouquet-notecard-basket@2x.png",
+      "description": "A sweet mix of pastel peonies and roses in a woven basket with a keepsake notecard."
+    },
+    {
+      "id": 10,
+      "category": "bouquet",
+      "name": "Field Joy",
+      "price": 49,
+      "image": "images/bouquet-wildflowers.png",
+      "image2x": "images/bouquet-wildflowers@2x.png",
+      "description": "A joyful hand-tied bunch of wildflowers bursting with color."
+    },
+    {
+      "id": 11,
+      "category": "bouquet",
+      "name": "Soft Bloom",
+      "price": 37,
+      "image": "images/bouquet-vintage-dark.png",
+      "image2x": "images/bouquet-vintage-dark@2x.png",
+      "description": "Soft blush blooms wrapped in kraft paper with a satin bow for a timeless gift."
+    }
+  ]
+}

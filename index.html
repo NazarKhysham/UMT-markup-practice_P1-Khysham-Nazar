@@ -71,20 +71,14 @@
 
     <main>
       <section class="hero" id="top">
-        <picture>
-          <source
-            srcset="images/hero-bouquet.png 1x, images/hero-bouquet@2x.png 2x"
-            media="(min-width: 768px)"
-          />
-          <img
-            class="hero__bg"
-            src="images/hero-bouquet.png"
-            srcset="images/hero-bouquet.png 1x, images/hero-bouquet@2x.png 2x"
-            alt=""
-            width="1440"
-            height="669"
-          />
-        </picture>
+        <img
+          class="hero__bg"
+          src="images/hero-bouquet.png"
+          srcset="images/hero-bouquet.png 1x, images/hero-bouquet@2x.png 2x"
+          alt=""
+          width="1440"
+          height="669"
+        />
         <div class="container hero__container">
           <div class="hero__content" data-aos="fade-up">
             <h1 class="hero__title">Brighten Your Day with Our Stunning Bouquets</h1>
@@ -370,22 +364,25 @@
             ></textarea>
           </label>
 
-          <label class="checkbox">
-            <input
-              class="checkbox__input visually-hidden"
-              type="checkbox"
-              name="agreement"
-              required
-            />
-            <span class="checkbox__box">
-              <svg class="icon checkbox__icon" width="12" height="10">
-                <use href="images/icons.svg#icon-check"></use>
-              </svg>
-            </span>
-            <span class="checkbox__text"
-              >I agree to the license agreement and terms of service.</span
-            >
-          </label>
+          <div class="order-form__field order-form__field--checkbox">
+            <label class="checkbox">
+              <input
+                class="checkbox__input visually-hidden"
+                type="checkbox"
+                name="agreement"
+                required
+              />
+              <span class="checkbox__box">
+                <svg class="icon checkbox__icon" width="12" height="10">
+                  <use href="images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              <span class="checkbox__text"
+                >I agree to the license agreement and terms of service.</span
+              >
+            </label>
+            <span class="order-form__error">Please accept the license agreement.</span>
+          </div>
 
           <button class="btn btn--primary order-form__submit" type="submit">Go to Checkout</button>
         </form>

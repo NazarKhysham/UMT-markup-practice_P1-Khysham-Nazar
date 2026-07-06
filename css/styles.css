@@ -479,8 +479,14 @@ textarea {
 
 .testimonials__list {
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 85%;
   gap: 24px;
   margin-bottom: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .testimonial-card {
@@ -488,6 +494,7 @@ textarea {
   padding: 24px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+  scroll-snap-align: start;
 }
 
 .testimonial-card__author {
@@ -522,7 +529,14 @@ textarea {
 
 @media (min-width: 768px) {
   .testimonials__list {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
     grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+
+  .testimonials__nav {
+    display: none;
   }
 }
 
@@ -790,6 +804,10 @@ textarea {
 
 .order-form__field.is-invalid .order-form__error {
   display: block;
+}
+
+.order-form__field--checkbox.is-invalid .checkbox__box {
+  border-color: var(--color-error);
 }
 
 .checkbox {

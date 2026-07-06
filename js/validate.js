@@ -24,6 +24,14 @@ export function initOrderFormValidation(form) {
     });
   });
 
+  if (checkbox) {
+    checkbox.addEventListener('change', () => {
+      if (checkbox.closest('.order-form__field').classList.contains('is-invalid')) {
+        validateField(checkbox);
+      }
+    });
+  }
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -32,7 +40,7 @@ export function initOrderFormValidation(form) {
       if (!validateField(input)) isFormValid = false;
     });
 
-    if (checkbox && !checkbox.checkValidity()) {
+    if (checkbox && !validateField(checkbox)) {
       isFormValid = false;
     }
 

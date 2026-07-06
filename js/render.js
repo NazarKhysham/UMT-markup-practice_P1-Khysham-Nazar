@@ -76,10 +76,14 @@ async function loadBouquets({ append }) {
     bouquetsEmpty.hidden = loadedCount > 0;
     showMoreBtn.hidden = loadedCount >= total;
   } catch (error) {
-    bouquetsList.innerHTML = '';
-    bouquetsEmpty.hidden = false;
-    bouquetsEmpty.textContent = 'Failed to load bouquets. Please try again later.';
-    showMoreBtn.hidden = true;
+    if (!append) {
+      bouquetsList.innerHTML = '';
+      bouquetsEmpty.hidden = false;
+      bouquetsEmpty.textContent = 'Failed to load bouquets. Please try again later.';
+    } else {
+      state.page -= 1;
+    }
+    showMoreBtn.hidden = append;
     console.error(error);
   }
 }

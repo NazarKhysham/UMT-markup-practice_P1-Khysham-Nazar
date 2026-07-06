@@ -34,6 +34,8 @@
           <li><a class="nav__link" href="#contacts">Contacts</a></li>
         </ul>
 
+        <a class="btn btn--primary nav__cta" href="#bouquets">Explore Bouquets</a>
+
         <button
           class="nav__toggle"
           type="button"
@@ -98,11 +100,9 @@
           </svg>
           <h2 class="section-title">Our Passion for Floral Artistry</h2>
           <p class="passion__text">
-            At Flora, we believe that every occasion deserves a beautiful bouquet. Our expertly
-            crafted arrangements are designed to bring joy and elegance to your celebrations. Our
-            skilled florists handpick the freshest blooms and carefully design each arrangement,
-            blending creativity with the freshest blooms to create stunning pieces for every
-            occasion.
+            At Flora, we believe that every bouquet tells a story. Our team meticulously crafts each
+            arrangement, blending creativity with the freshest blooms to create stunning pieces for
+            every occasion.
           </p>
         </div>
         <div class="passion__image-wrap" data-aos="fade-left">
@@ -306,9 +306,25 @@
           <h3 class="product-modal__title" id="product-modal-title"></h3>
           <p class="product-modal__price" id="product-modal-price"></p>
           <p class="product-modal__description" id="product-modal-description"></p>
-          <button class="btn btn--primary product-modal__buy" id="product-modal-buy" type="button">
-            Buy Now
-          </button>
+          <div class="product-modal__actions">
+            <button
+              class="btn btn--primary product-modal__buy"
+              id="product-modal-buy"
+              type="button"
+            >
+              Buy now
+            </button>
+            <label class="product-modal__qty-label">
+              <span class="visually-hidden">Quantity</span>
+              <input
+                class="product-modal__qty"
+                id="product-modal-qty"
+                type="number"
+                min="1"
+                value="1"
+              />
+            </label>
+          </div>
         </div>
       </div>
     </div>
@@ -328,6 +344,7 @@
         <h3 class="order-modal__title" id="order-modal-title">Order</h3>
         <form class="order-form" id="order-form" novalidate>
           <input type="hidden" name="productId" id="order-product-id" />
+          <input type="hidden" name="quantity" id="order-quantity" value="1" />
 
           <label class="order-form__field">
             <span class="order-form__label">Name*</span>

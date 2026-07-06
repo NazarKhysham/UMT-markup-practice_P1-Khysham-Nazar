@@ -59,7 +59,9 @@ const productModalBuy = document.querySelector('#product-modal-buy');
 
 const orderModal = document.querySelector('#order-modal');
 const orderProductId = document.querySelector('#order-product-id');
+const orderQuantity = document.querySelector('#order-quantity');
 const orderForm = document.querySelector('#order-form');
+const productModalQty = document.querySelector('#product-modal-qty');
 
 function openProductModal(product) {
   productModalImage.src = product.image;
@@ -69,6 +71,7 @@ function openProductModal(product) {
   productModalPrice.textContent = `$${product.price}`;
   productModalDescription.textContent = product.description;
   productModalBuy.dataset.id = product.id;
+  productModalQty.value = 1;
   openModal(productModal);
 }
 
@@ -76,6 +79,7 @@ onProductCardClick(openProductModal);
 
 productModalBuy.addEventListener('click', () => {
   orderProductId.value = productModalBuy.dataset.id;
+  orderQuantity.value = Math.max(1, Number(productModalQty.value) || 1);
   closeModal(productModal);
   openModal(orderModal);
 });

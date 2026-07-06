@@ -555,6 +555,12 @@ textarea {
   gap: 32px;
 }
 
+.contact__top {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .contact__eyebrow {
   color: var(--color-text-muted);
   margin: 0 0 8px;
@@ -565,7 +571,7 @@ textarea {
 
 .contact__text {
   color: var(--color-text-muted);
-  margin-bottom: 24px;
+  margin: 0;
 }
 
 .contact__list {
@@ -603,25 +609,24 @@ textarea {
 
 .contact__image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+  display: block;
 }
 
 @media (min-width: 768px) {
-  .contact {
+  .contact__top {
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
   }
 
-  .contact__info,
-  .contact__image-wrap {
-    flex: 1;
-    min-width: 0;
+  .contact__intro {
+    max-width: 480px;
   }
 
-  .contact__image-wrap {
-    aspect-ratio: 16 / 9;
-    max-height: 420px;
+  .contact__list {
+    flex-shrink: 0;
   }
 }
 

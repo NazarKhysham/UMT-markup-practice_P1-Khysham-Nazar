@@ -402,18 +402,22 @@ textarea {
 
 .products__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 16px 24px;
 }
 
 @media (min-width: 768px) {
   .products__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px 32px;
   }
 }
 
 @media (min-width: 1440px) {
+  .products__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .products--bouquets .products__grid {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -748,7 +752,7 @@ textarea {
 
 .product-modal__image {
   width: 100%;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   object-fit: cover;
 }
 

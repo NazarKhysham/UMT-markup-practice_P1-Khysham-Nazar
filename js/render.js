@@ -7,7 +7,9 @@ const showMoreBtn = document.querySelector('#show-more-btn');
 const searchInput = document.querySelector('#bouquets-search');
 const filterForm = document.querySelector('#bouquets-filter');
 
-const BOUQUETS_LIMIT = 4;
+function getBouquetsLimit() {
+  return window.innerWidth >= 1440 ? 8 : 4;
+}
 
 const state = {
   page: 1,
@@ -61,7 +63,7 @@ async function loadBouquets({ append }) {
   try {
     const { items, total } = await fetchBouquets({
       page: state.page,
-      limit: BOUQUETS_LIMIT,
+      limit: getBouquetsLimit(),
       search: state.search,
     });
     registerProducts(items);

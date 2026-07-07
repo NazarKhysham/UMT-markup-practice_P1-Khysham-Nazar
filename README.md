@@ -51,6 +51,19 @@ npx serve .
 
 Then open the printed local URL in your browser. The page expects the API at `http://localhost:4000` — update the `baseURL` in `js/api.js` if you run it on a different port.
 
+## ⚠️ Testing the live GitHub Pages demo
+
+The GitHub Pages link (served over **HTTPS**) is only useful for reviewing the static markup and styles. The dynamic sections (Top-Selling, Bouquets, product modals) will always show "Failed to load" there, because:
+
+- `json-server` only runs locally over plain **HTTP** (`http://localhost:4000`)
+- Chrome blocks any fetch/XHR from an HTTPS page to an insecure HTTP address ("mixed content") — this is a browser security policy, not a bug, and there is no way around it on the deployed link
+
+**To see the dynamic features working, always test locally over HTTP:**
+
+1. `npm run api` (starts the mock API on port 4000)
+2. `npx serve .` (starts the site itself over `http://localhost:...`)
+3. Open the printed `http://localhost:...` URL — both the page and the API are HTTP now, so the fetches succeed
+
 ## Notes
 
 - All photos, colors, typography and copy come directly from the Figma file. A handful of purely functional UI glyphs (burger/close icons, form checkmark, phone/pin/social icons) were hand-drawn as simple SVGs since the macet doesn't expose them as separate exportable assets.

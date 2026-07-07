@@ -1,70 +1,99 @@
-# Flora — Flower Shop Website
+Flora — сайт магазину квітів
 
-A responsive HTML/CSS/JS website for a florist shop, built from the [Flora Figma design](https://www.figma.com/design/2Tj16H7IO7dq1ViTvIh57V/Flora). Combines a static, semantic, adaptive layout (mobile-first, 375 / 768 / 1440) with an interactive layer: retina images, modals, dynamic product lists via a mock API, pagination and filtering.
+Це навчальний проєкт сайту для магазину квітів Flora.
+Сайт зроблений за макетом з Figma.
 
-## Stack
+У проєкті є адаптивна верстка для різних екранів: мобільний, планшет і десктоп. Також додана інтерактивність на JavaScript: мобільне меню, модальні вікна, список товарів, фільтрація, пагінація і форма замовлення.
 
-- Semantic HTML5, CSS custom properties, `modern-normalize`
-- Vanilla JavaScript (ES modules), `axios` for HTTP requests
-- `json-server` as a mock REST API (`db.json`)
-- SVG sprite for icons, AOS for scroll animations
+Технології
 
-## Project structure
+У проєкті використано:
 
-```
+* HTML5
+* CSS3
+* JavaScript
+* Axios для запитів
+* json-server для локального API
+* SVG-іконки
+* AOS для анімацій при скролі
+
+Структура проєкту
+
 index.html
 css/
   modern-normalize.css
   styles.css
 js/
-  main.js        # mobile menu, modals, wiring
-  api.js         # axios calls to the mock API
-  render.js      # dynamic rendering, pagination, filtering
-  validate.js    # order form validation
+  main.js
+  api.js
+  render.js
+  validate.js
   vendor/
-    axios.esm.js # locally vendored axios ESM build
-images/          # optimized photos (@1x/@2x), icons.svg, logo.svg
-db.json          # mock product data for json-server
-```
+    axios.esm.js
+images/
+db.json
 
-## Running locally
+Коротко про основні файли:
 
-Install dependencies once:
+* index.html — основна сторінка сайту
+* css/styles.css — стилі сайту
+* js/main.js — меню, модальні вікна і запуск основного коду
+* js/api.js — запити до локального API
+* js/render.js — виведення товарів, фільтр і пагінація
+* js/validate.js — перевірка форми замовлення
+* db.json — дані товарів для json-server
+* images/ — картинки та іконки
 
-```bash
+Як запустити проєкт
+
+Спочатку потрібно встановити залежності:
+
 npm install
-```
 
-Start the mock API (in one terminal):
+Потім в одному терміналі запустити локальний API:
 
-```bash
 npm run api
-```
 
-This serves the product data at `http://localhost:4000/products` (json-server, watching `db.json`).
+API буде працювати за адресою:
 
-Serve the site itself (in another terminal), for example with any static server:
+http://localhost:4000/products
 
-```bash
+В іншому терміналі потрібно запустити сам сайт, наприклад так:
+
 npx serve .
-```
 
-Then open the printed local URL in your browser. The page expects the API at `http://localhost:4000` — update the `baseURL` in `js/api.js` if you run it on a different port.
+Після цього потрібно відкрити посилання, яке з’явиться в терміналі.
 
-## ⚠️ Testing the live GitHub Pages demo
+Важливо про GitHub Pages
 
-The GitHub Pages link (served over **HTTPS**) is only useful for reviewing the static markup and styles. The dynamic sections (Top-Selling, Bouquets, product modals) will always show "Failed to load" there, because:
+На GitHub Pages можна подивитися тільки верстку і стилі сайту.
 
-- `json-server` only runs locally over plain **HTTP** (`http://localhost:4000`)
-- Chrome blocks any fetch/XHR from an HTTPS page to an insecure HTTP address ("mixed content") — this is a browser security policy, not a bug, and there is no way around it on the deployed link
+Динамічні частини сайту, такі як:
 
-**To see the dynamic features working, always test locally over HTTP:**
+* Top-Selling
+* Bouquets
+* модальні вікна товарів
 
-1. `npm run api` (starts the mock API on port 4000)
-2. `npx serve .` (starts the site itself over `http://localhost:...`)
-3. Open the printed `http://localhost:...` URL — both the page and the API are HTTP now, so the fetches succeed
+можуть не працювати на GitHub Pages, тому що сайт відкривається через HTTPS, а локальний API працює через HTTP на localhost:4000.
 
-## Notes
+Це не помилка сайту, а обмеження браузера.
 
-- All photos, colors, typography and copy come directly from the Figma file. A handful of purely functional UI glyphs (burger/close icons, form checkmark, phone/pin/social icons) were hand-drawn as simple SVGs since the macet doesn't expose them as separate exportable assets.
-- Images were compressed with `sharp` (lossless PNG re-encoding, ~70% size reduction) as a one-off step; no build step is required to run the site.
+Щоб перевірити всі функції, потрібно запускати проєкт локально:
+
+1. Запустити API:
+
+npm run api
+
+2. Запустити сайт:
+
+npx serve .
+
+3. Відкрити локальне посилання в браузері.
+
+Примітки
+
+Картинки, кольори, шрифти і текст були взяті з макету Figma.
+
+Деякі іконки, наприклад меню, закриття, телефон, адреса і соцмережі, були зроблені окремо у SVG, бо в макеті їх не завжди можна було зручно експортувати.
+
+Картинки були оптимізовані, щоб сайт швидше завантажувався.

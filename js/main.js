@@ -1,7 +1,9 @@
 import { initTopSelling, initBouquets, onProductCardClick } from './render.js';
 import { initOrderFormValidation } from './validate.js';
 
-AOS.init({ duration: 600, once: true, offset: 40 });
+if (window.AOS) {
+  AOS.init({ duration: 600, once: true, offset: 40 });
+}
 
 /* ---------- Mobile menu ---------- */
 const navToggle = document.querySelector('.nav__toggle');
